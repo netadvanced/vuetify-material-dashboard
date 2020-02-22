@@ -12,7 +12,6 @@
 
 // * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
@@ -21,6 +20,7 @@ import Vue from 'vue'
 import './components'
 
 // Plugins
+import vuetify from './plugins/vuetify'
 import './plugins'
 import { sync } from 'vuex-router-sync'
 
@@ -38,5 +38,6 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')

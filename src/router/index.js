@@ -19,9 +19,7 @@ function route (path, view, name) {
   return {
     name: name || view,
     path,
-    component: (resolve) => import(
-      `@/views/${view}.vue`
-    ).then(resolve)
+    component: (resolve) => import(`@/views/${view}.vue`).then(resolve)
   }
 }
 

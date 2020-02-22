@@ -9,23 +9,27 @@
     offset-x
     transition="slide-y-transition"
   >
-    <v-btn
-      slot="activator"
-      class="elevation-0"
-      color="grey"
-      dark
-      fab
-      fixed
-      style="top: 96px;"
-      top
-    >
-      <v-icon>mdi-settings</v-icon>
-    </v-btn>
+    <template v-slot:activator="{ on }">
+      <v-btn
+        class="elevation-0"
+        color="grey"
+        dark
+        fab
+        fixed
+        style="top: 96px;"
+        top
+        v-on="on"
+      >
+        <v-icon>mdi-settings</v-icon>
+      </v-btn>
+    </template>
     <v-card>
       <v-container grid-list-xl>
         <v-layout wrap>
           <v-flex xs12>
-            <div class="text-xs-center body-2 text-uppercase sidebar-filter">Sidebar Filters</div>
+            <div class="text-xs-center body-2 text-uppercase sidebar-filter">
+              Sidebar Filters
+            </div>
 
             <v-layout justify-center>
               <v-avatar
@@ -37,12 +41,14 @@
                 @click="setColor(c)"
               />
             </v-layout>
-            <v-divider class="mt-3"/>
+            <v-divider class="mt-3" />
           </v-flex>
           <v-flex
             xs12
           >
-            <div class="text-xs-center body-2 text-uppercase sidebar-filter">Images</div>
+            <div class="text-xs-center body-2 text-uppercase sidebar-filter">
+              Images
+            </div>
           </v-flex>
           <v-flex
             v-for="img in images"
@@ -90,7 +96,7 @@
                   fab
                   icon
                   small
-                  round
+                  rounded
                 >
                   <v-icon>mdi-facebook</v-icon>
                 </v-btn>
@@ -100,7 +106,7 @@
                   fab
                   icon
                   small
-                  round
+                  rounded
                 >
                   <v-icon>mdi-twitter</v-icon>
                 </v-btn>

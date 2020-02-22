@@ -5,21 +5,23 @@
     style="flex-wrap: wrap;"
   >
     <material-card color="green">
-      <div
-        slot="header"
-      >
-        <div class="title font-weight-light mb-2">Material Design Icons</div>
-        <div class="category font-weight-thin">
-          See all available
-          <a
-            class="white--text"
-            href="https://materialdesignicons.com/"
-            target="_blank"
-          >
-            Icons
-          </a>
+      <template v-slot:header="{ on }">
+        <div v-on="on">
+          <div class="title font-weight-light mb-2">
+            Material Design Icons
+          </div>
+          <div class="category font-weight-thin">
+            See all available
+            <a
+              class="white--text"
+              href="https://materialdesignicons.com/"
+              target="_blank"
+            >
+              Icons
+            </a>
+          </div>
         </div>
-      </div>
+      </template>
 
       <v-layout
         align-center
@@ -33,10 +35,13 @@
         >
           <v-tooltip
             top
-            content-class="top">
-            <v-icon slot="activator">
-              {{ icon }}
-            </v-icon>
+            content-class="top"
+          >
+            <template v-slot:activator="{ on }">
+              <v-icon v-on="on">
+                {{ icon }}
+              </v-icon>
+            </template>
             <span>{{ icon }}</span>
           </v-tooltip>
         </v-flex>
@@ -50,9 +55,11 @@
         color="success"
         href="https://materialdesignicons.com/"
         target="_blank"
-        round
+        rounded
       >
-        <v-icon left>mdi-material-design</v-icon>
+        <v-icon left>
+          mdi-material-design
+        </v-icon>
         <span>See all icons</span>
       </v-btn>
     </div>

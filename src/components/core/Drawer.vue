@@ -18,48 +18,43 @@
         tag="v-list"
         column
       >
-        <v-list-tile avatar>
-          <v-list-tile-avatar
-            color="white"
-          >
+        <v-list-item>
+          <v-list-item-avatar color="white">
             <v-img
               :src="logo"
               height="34"
               contain
             />
-          </v-list-tile-avatar>
-          <v-list-tile-title class="title">
+          </v-list-item-avatar>
+          <v-list-item-title class="title">
             Vuetify MD
-          </v-list-tile-title>
-        </v-list-tile>
-        <v-divider/>
-        <v-list-tile
+          </v-list-item-title>
+        </v-list-item>
+        <v-divider />
+        <v-list-item
           v-for="(link, i) in links"
           :key="i"
           :to="link.to"
           :active-class="color"
-          avatar
-          class="v-list-item"
+          class="v-list-tile"
         >
-          <v-list-tile-action>
+          <v-list-item-action>
             <v-icon>{{ link.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title
-            v-text="link.text"
-          />
-        </v-list-tile>
-        <v-list-tile
+          </v-list-item-action>
+          <v-list-item-title v-text="link.text" />
+        </v-list-item>
+        <v-list-item
           active-class="success"
-          class="v-list-item v-list__tile--buy"
+          class="v-list-tile v-list__tile--buy"
           to="/upgrade"
         >
-          <v-list-tile-action>
+          <v-list-item-action>
             <v-icon>mdi-package-up</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title class="font-weight-light">
+          </v-list-item-action>
+          <v-list-item-title class="font-weight-light">
             Upgrade To PRO
-          </v-list-tile-title>
-        </v-list-tile>
+          </v-list-item-title>
+        </v-list-item>
       </v-layout>
     </v-img>
   </v-navigation-drawer>
@@ -81,8 +76,7 @@ export default {
   },
   data: () => ({
     logo: 'favicon.ico',
-    links: [
-      {
+    links: [{
         to: '/',
         icon: 'mdi-view-dashboard',
         text: 'Dashboard'
@@ -141,14 +135,14 @@ export default {
 </script>
 
 <style lang="scss">
-  #app-drawer {
-    .v-list__tile {
-      border-radius: 4px;
+#app-drawer {
+  .v-list__tile {
+    border-radius: 4px;
 
-      &--buy {
-        margin-top: auto;
-        margin-bottom: 17px;
-      }
+    &--buy {
+      margin-top: auto;
+      margin-bottom: 17px;
     }
   }
+}
 </style>

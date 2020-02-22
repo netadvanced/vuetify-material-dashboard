@@ -4,7 +4,9 @@ import theme from './theme'
 import 'vuetify/dist/vuetify.min.css'
 import '@mdi/font/css/materialdesignicons.css'
 
-Vue.use(Vuetify, {
+Vue.use(Vuetify)
+
+export default new Vuetify({
   iconfont: 'mdi',
   theme
 })
